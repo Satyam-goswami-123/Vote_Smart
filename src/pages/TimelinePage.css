@@ -1,0 +1,305 @@
+.timeline-page {
+  padding-top: 72px;
+}
+
+.timeline-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0d1526 0%, #1a0a3e 100%);
+  padding: 4rem 0 3rem;
+  overflow: hidden;
+}
+
+.timeline-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-body {
+  padding: 2.5rem 0 5rem;
+}
+
+/* Phase Selector (horizontal scrollable) */
+.phase-selector {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  scrollbar-width: none;
+}
+
+.phase-selector::-webkit-scrollbar { display: none; }
+
+.phase-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid var(--border-color);
+  background: var(--bg-card);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: 140px;
+  font-family: inherit;
+}
+
+.phase-btn:hover {
+  border-color: var(--pc);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.phase-btn.active {
+  border-color: var(--pc);
+  background: color-mix(in srgb, var(--pc) 10%, var(--bg-card));
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--pc) 25%, transparent);
+}
+
+.phase-btn-icon { font-size: 1.6rem; }
+.phase-btn-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.phase-btn-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* Phase Detail Layout */
+.phase-detail-wrapper {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Vertical Timeline */
+.phase-vertical-timeline {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 90px;
+}
+
+.vt-item {
+  display: grid;
+  grid-template-columns: 36px auto 1fr auto;
+  gap: 0.75rem;
+  align-items: start;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 0;
+}
+
+.vt-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.vt-item.active .vt-dot {
+  border-color: var(--pc);
+  background: color-mix(in srgb, var(--pc) 15%, var(--bg-card));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--pc) 20%, transparent);
+}
+
+.vt-line {
+  width: 2px;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--border-color);
+  margin: 4px auto;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.vt-content {
+  padding: 0.4rem 0 1.25rem;
+}
+
+.vt-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.vt-date {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.vt-item.active .vt-title { color: var(--pc); }
+
+.vt-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 0.65rem;
+  flex-shrink: 0;
+}
+
+/* Phase Detail Card */
+.phase-detail {
+  padding: 2rem;
+}
+
+.phase-detail-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.phase-icon-large {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--pc) 15%, var(--bg-secondary));
+  border: 2px solid color-mix(in srgb, var(--pc) 30%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.phase-status-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.phase-description {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  border-left: 3px solid var(--border-color);
+  padding-left: 1rem;
+}
+
+.phase-sections {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.section-sub-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.phase-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.phase-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem;
+  background: var(--bg-secondary);
+  border-radius: 0.75rem;
+  border-left: 3px solid var(--pc);
+  transition: all 0.2s;
+}
+
+.phase-step-item:hover {
+  background: color-mix(in srgb, var(--pc) 8%, var(--bg-secondary));
+  transform: translateX(4px);
+}
+
+.step-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.phase-step-item p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Side Info */
+.phase-side-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tips-card, .links-card {
+  padding: 1.25rem;
+}
+
+.tips-card ul, .links-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tips-card li, .links-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.tips-card li svg, .links-card li svg { flex-shrink: 0; margin-top: 2px; }
+
+/* Phase Nav */
+.phase-nav {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .phase-sections { grid-template-columns: 1fr; }
+  .phase-side-info { flex-direction: row; }
+}
+
+@media (max-width: 768px) {
+  .phase-detail-wrapper { grid-template-columns: 1fr; }
+  .phase-vertical-timeline { display: none; }
+  .phase-selector { flex-wrap: nowrap; }
+  .phase-side-info { flex-direction: column; }
+}
