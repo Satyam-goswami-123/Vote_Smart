@@ -6,13 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "test": "vitest run",
-    "start": "serve -s dist -l $PORT"
+    "start": "serve -s dist -l 8080"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.x"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
